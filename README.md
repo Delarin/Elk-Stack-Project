@@ -3,4 +3,4 @@
 ### The final setup consisted of 2 webservers running DVWA containers, Jump-Box running an ansible provisional and an Elk server running ELK stack.
 
 ![alt text][logo]
-[logo]: https://github.com/Delarin/Elk-Stack-Project/Diagrams/Elk Project.png "Cloud Infrastructure"
+[logo]: https://github.com/Delarin/Elk-Stack-Project/Diagrams/Elk Project.pngDiagrams/ "Cloud Infrastructure"
