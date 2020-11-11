@@ -326,10 +326,10 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
     
    * We accessed our ELK server by navigating to "http://[your.ELK-VM.External.IP]:5601/app/kibana" ie. http://104.209.238.34:5601/app/kibana
    
-   ![kibana app](./Diagrams/images/image10.PNG)
+   ![kibana app](./Diagrams/images/image10.png)
    
    
-   ![kibana app 2](./Diagrams/images/image2.PNG)
+   ![kibana app 2](./Diagrams/images/image2.png)
    
    
      
