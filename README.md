@@ -306,11 +306,17 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
 
    * We Left all other settings at their defaults.
    
-   #### Downloading and Configuring the elk Container
+   #### Downloading and Configuring the ELK Container
    
    * From your Ansible container, we added the new VM to Ansible's hosts file.
    
      `root@cbe12e5ae6b6e:/etc/ansible# nano hosts`
+    
+     ![Hosts file](./Ansible/hosts.PNG)
+     
+   * We created the elk yaml playbook
+   
+   
      
      
    
