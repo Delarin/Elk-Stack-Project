@@ -173,6 +173,14 @@ It is crucial to make sure both of these VM's are in the same availability Set.
    
 We edited the ansible.cfg, and hosts files as thus:
 
+   `root@cbe12e5ae6b6e:/etc/ansible# nano ansible.cfg`
+
+   ![ansible.cfg file](./Ansible/ansible.cfg.PNG)
+
+  
+   `root@cbe12e5ae6b6e:/etc/ansible# nano hosts`
+   
+   ![Hosts file](./Ansible/hosts.PNG)
   
 
 
