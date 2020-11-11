@@ -65,7 +65,7 @@ Notice that the IP Addressing has automatically created a new network space of 1
 #### SSH SETUP
 Accessing a server using a password is the weakest form of authorization: many programs can brute force an SSH password. Instead, so we will use an SSH key pair to access our new machine.
 
-* Open a terminal and run ssh-keygen.
+* Open a terminal and run `ssh-keygen`.
 
 
 * You will be prompted to save the SSH key into the default directory ~/.ssh/id_rsa. DO NOT CHANGE THIS LOCATION. Press the Enter key.
@@ -75,7 +75,7 @@ Accessing a server using a password is the weakest form of authorization: many p
 
   * DO NOT ENTER A PASSWORD. Press the enter key twice to enter a blank password
 
-* Run cat ~/.ssh/id_rsa.pub to show your id_rsa.pub key:
+* Run `cat ~/.ssh/id_rsa.pub` to show your id_rsa.pub key:
 
 * Copy the SSH key string and paste it into the Administrator Account section on the Basics page for the VM in Azure.
 
@@ -104,7 +104,7 @@ We Created 2 more new VMs with the following properties:
 * Setup ssh connection
 
   * For these machines, we used the ssh key that was created for the first machine.
-  * Run cat ~/.ssh/id_rsa.pub to get the public key.
+  * Run `cat ~/.ssh/id_rsa.pub` to get the public key.
 
 * Choose the VM option that has:
 
@@ -135,7 +135,22 @@ It is crucial to make sure both of these VM's are in the same availability Set.
    * we created a rule to allow connection from our public IP Address to the VM's internal IP address via the Inbound security rules.
    
  * On the command line, we then ssh into the VM for administration
-   * The command to ssh into the VM is `ssh azdmin@51.143.20.69` 
+   * The command to ssh into the VM is `ssh azdmin@51.143.20.69` where azdmin is username and 51.143.20.69 is Jump-Box-Provisioner public IP address.
+   
+   #### Installing Docker containers into the VMs
+   Docker is the most common program used to manage containers
+   
+   * Steps
+     * While connected to the Jump-Box, we performed the following commands:
+     * `$ apt-get update`
+     * `$ sudo apt-get install docker.io`
+     * `$ sudo systemctl status docker`
+     * `$ sudo systemctl start docker` to start docker service
+   * We installed an image that we want to use for the project
+     * `$ sudo docker pull cybersecurity/ansible`
+     * `$ sudo docker run -ti cybersecurity/ansible bash`
+       
+   
 
 
 
