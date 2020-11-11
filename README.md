@@ -120,6 +120,23 @@ It is crucial to make sure both of these VM's are in the same availability Set.
 * We named it "Web-Set". for both VMs.
 * Then Save the changes.
 
+* Under Networking:
+
+ * We ensure that these new VMs are assigned to the security group.
+
+ * Also that these machines do not have public IP addresses by setting the Public IP to 'None' for both.
+ 
+ #### Jump Box Administration
+ 
+ * We started by identifying your public IP address
+  * Browse myipv4 to reveal your public IP address
+  
+ * Then in the azure.com account, we searched for Network Securitry Group we created previously
+   * we created a rule to allow connection from our public IP Address to the VM's internal IP address via the Inbound security rules.
+   
+ * On the command line, we then ssh into the VM for administration
+   * The command to ssh into the VM is `ssh azdmin@51.143.20.69` 
+
 
 
 The username can be any name, but it must be something the students will not forget. The SSH public key must be copied from the machine.
