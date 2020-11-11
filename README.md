@@ -73,14 +73,52 @@ Accessing a server using a password is the weakest form of authorization: many p
 
 * You will be prompted to enter a password for our new SSH key.
 
-DO NOT ENTER A PASSWORD. Press the enter key twice to enter a blank password
+  * DO NOT ENTER A PASSWORD. Press the enter key twice to enter a blank password
 
 * Run cat ~/.ssh/id_rsa.pub to show your id_rsa.pub key:
 
 * Copy the SSH key string and paste it into the Administrator Account section on the Basics page for the VM in Azure.
 
-For SSH public key source select Use existing public key from the drop down.
-You will use the same SSH key for every machine you create today. Later we will change the key on a few machines.
+  * For SSH public key source select Use existing public key from the drop down.
+  * You will use the same SSH key for every machine you create for this project
+
+#### Create VMs 2 and 3 - The Web VM's
+We Created 2 more new VMs with the following properties:
+
+
+* named "Web-1" and "Web-2"
+
+
+* resource group Red Team.
+
+
+* Each VM located in the same region as the resource and security groups.
+
+
+
+
+* We chose an administrative username - azdmin.
+
+ * You should use the same admin name for all 3 machines.
+
+* Setup ssh connection
+
+  * For these machines, we used the ssh key that was created for the first machine.
+  * Run cat ~/.ssh/id_rsa.pub to get the public key.
+
+* Choose the VM option that has:
+
+  * Whose offering is Standard - B1ms
+
+    * 1 CPU
+    * 2 RAM
+
+It is crucial to make sure both of these VM's are in the same availability Set.
+
+* Under Availability Options, we selected 'Availability Set'.
+* Clicked on 'Create New' under the Availability set.
+* We named it "Web-Set". for both VMs.
+* Then Save the changes.
 
 
 
