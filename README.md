@@ -181,44 +181,135 @@ We edited the ansible.cfg, and hosts files as thus:
    `root@cbe12e5ae6b6e:/etc/ansible# nano hosts`
    
    ![Hosts file](./Ansible/hosts.PNG)
+   
+   We then ran the playbook to install DVWA on our webservers, Web-1 and Web-2
+   
+   `root@cbe12e5ae6b6e:/etc/ansible# ansible-playbook pentest.yml`
+   
+ #### Load Balancer
+ 
+ * From the Azure portal, we searched for "load balancer."
+
+
+* We added the load balancer with the same + Add button that exists on other pages in the Azure portal.
+
+
+* We selected the same Resource Group.
+
+
+* We provided a Name
+
+
+* We selected 'Create New' for the Public IP address setting.
+
+
+* We gave the public IP a name
+
+
+* For the IP Assignment, we chose 'Static'
+
+
+* We clicked on Review + create and confirm.
+
+#### Firewall Configuration 
+
+we want to make sure that the load balancer is configured properly to allow traffic to the VM backend pool.
+
+* From the load balancer details page and we clicked on Load balancing rules on the left side.
+
+* Click the + Add button.
+
+* We selected the Session persistence to be Client IP and Protocol.
+
+* We selected the backend pool, and health probe we configured previously.
+
+
+
+#### Create New vNet
+
+
+* We created a new vNet located in the same resource group that we have been using.
+
+
+* We located the vNet into another region and not the same region.
+
+
+* We Left the rest of the settings at default.
+
+Notice that the IP Addressing has automatically created a new network space of 10.1.0.0/16 which is exactly what you want.
+
+
+####  Create a New VM, named Project
+
+We created a new Ubuntu VM in your virtual network using the same procedure mentioned above with the following configurations:
+
+
+* RAM: 4 GB+ (Standard B2s (2vcpus, 4GiB memory)
+
+
+* IP Address: The VM must have a public IP address.
+
+
+* Networking: The VM must be added to the new region in which you created your new vNet. You want to make sure you select your new vNEt and allow a new basic Security Group to be created for this VM.
+
+
+* Access: The VM must use the same SSH keys as your WebVM's. This should be the ssh keys that were created on the Ansible container that's running on your jump box.
+
+
+ * From the terminal on our computer, we SSH into the jump box.
+
+
+ * From the jump box login shell, run the required Docker commands to start and attach to your Ansible container.
+
+
+ * We used cat to retrieved the public ssh key (~/.ssh/id_rsa.pub), copy and paste into the VM as explained above.
+
+
+ * After creating the new VM in Azure, verify that it works as expected by connecting via SSH from the Ansible container  on your jump box VM.
+
+
+  * From the Ansible container shell, SSH into the new VM using it's internal IP.
+
+
+  * Note that the new VM should be on a new subnet e.g 10.1.0.0/24
+
+
+  * (If the connection succeeds, you are ready to move on to the next step. If not, verify that you used the correct SSH key (from inside the Ansible container). If the problem persists, you will need to troubleshoot further).
+
+
+  * We createa a Peer connection between the vNets. This will allow traffic to pass between vNets in different regions. 
+
+
+   * We navigates to 'Virtual Network' in the Azure Portal.
+
+
+   * We selected the new vNet to view it's details.
+
+
+   * Under 'Settings' on the left side, we selected 'Peerings'.
+
+
+   * We clicked the + Add button to create a new Peering with the following settings:
+
+
+    * A unique name of the connection from your new vNet to your old vNet. We used Elk-to-Red.
+
+
+
+   * We chose our original RedTeam vNet in the dropdown labeled 'Virtual Network'.
+
+
+    * We named the connection from our RedTeam Vnet to our Elk vNet "Red-to-Elk".
+
+
+   * We Left all other settings at their defaults.
+
+
+
+
+
+
+
   
 
 
-The username can be any name, but it must be something the students will not forget. The SSH public key must be copied from the machine.
-
-Create a Peer connection between your vNets. This will allow traffic to pass between your vNets and regions. This peer connection will make both a connection from your first vNet to your Second vNet And a reverse connection from your second vNet back to your first vNet. This will allow traffic to pass in both directions.
-
-
-Navigate to 'Virtual Network' in the Azure Portal.
-
-
-Select your new vNet to view it's details.
-
-
-Under 'Settings' on the left side, select 'Peerings'.
-
-
-Click the + Add button to create a new Peering.
-
-
-Make sure your new Peering has the following settings:
-
-
-A unique name of the connection from your new vNet to your old vNet.
-
-Elk-to-Red would make sense
-
-
-
-Choose your original RedTeam vNet in the dropdown labeled 'Virtual Network'. This is the network you are connecting to your new vNet and you should only have one option.
-
-
-Name the resulting connection from your RedTeam Vnet to your Elk vNet.
-
-Red-to-Elk would make sense
-
-
-
-
-
-Leave all other settings at their defaults.
