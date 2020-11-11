@@ -1,4 +1,5 @@
-# Elk-Stack-Project
+# Cloud Computing
+## Elk-Stack-Project
 ### This project creates infrastructure behind SIEM - Kibana, using Linux Scripts and Ansible Scripts to configure cloud servers with different docker containers.
 ### The final setup consisted of 2 webservers running DVWA containers, Jump-Box running an ansible provisional and an Elk server running ELK stack.
 
@@ -276,6 +277,7 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
 
   * (If the connection succeeds, you are ready to move on to the next step. If not, verify that you used the correct SSH key (from inside the Ansible container). If the problem persists, you will need to troubleshoot further).
 
+  #### Peering the two vNets
 
   * We createa a Peer connection between the vNets. This will allow traffic to pass between vNets in different regions. 
 
@@ -303,6 +305,16 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
 
 
    * We Left all other settings at their defaults.
+   
+   #### Downloading and Configuring the elk Container
+   
+   * From your Ansible container, we added the new VM to Ansible's hosts file.
+   
+     `root@cbe12e5ae6b6e:/etc/ansible# nano hosts`
+     
+     
+   
+   
 
 
 
