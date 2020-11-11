@@ -3,7 +3,7 @@
 ### The final setup consisted of 2 webservers running DVWA containers, Jump-Box running an ansible provisional and an Elk server running ELK stack.
 
 #### Cloud-Infrastructure:
-![alt text](./Diagrams/Project.png)
+![Cloud Infrastructure](./Diagrams/Project.png)
 
 #### Instructions
 Make sure that you are logged into your personal Azure account
@@ -149,8 +149,13 @@ It is crucial to make sure both of these VM's are in the same availability Set.
    * We installed an image that we want to use for the project
      * `$ sudo docker pull cybersecurity/ansible`
      * `$ sudo docker run -ti cybersecurity/ansible bash`
-       
-   
+     * `$ docker run` note: this should only be run once after the installation of the docker.io
+      
+  #### YAML
+  The Ansible container has full access to our VNet and can make a connection with our new VM.
+  Each time we start our Virtual machines, we usually ran some few linux commands to start the ansible container and attach it, this below script was written to enhance performance.
+  
+  
 
 
 
