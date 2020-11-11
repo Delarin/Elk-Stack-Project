@@ -224,6 +224,10 @@ we want to make sure that the load balancer is configured properly to allow traf
 
 * We selected the backend pool, and health probe we configured previously.
 
+#### Assess our webservers via the Load balancer
+
+*  We accessed our webservers through the load-balancer by navigating to http://52.191.166.46/setup.php 
+
 
 
 #### Create New vNet
@@ -328,6 +332,7 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
    
    ![kibana app](./Diagrams/images/image10.png)
    
+   * We selected Explore
    
    ![kibana app 2](./Diagrams/images/image2.png)
    
