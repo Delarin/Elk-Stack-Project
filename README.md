@@ -154,9 +154,22 @@ It is crucial to make sure both of these VM's are in the same availability Set.
   #### YAML
   The Ansible container has full access to our VNet and can make a connection with our new VM.
   Each time we start our Virtual machines, we usually ran some few linux commands to start the ansible container and attach it, this below script was written to enhance performance.
+  `$ nano docker_container_ansible.sh`
   
   ![docker ansible container](./Linux/docker_container_ansible.PNG)
-
+  
+  * we then ran the following commands: 
+    `$ chmod +x docker_container_ansible.sh`
+    `$ sudo ./docker_container_ansible.sh`
+ This will eacalate our privilege to root.
+ 
+ We then ran the following commands:
+   `root@cbe12e5ae6b6e:~# cd /etc/ansible`
+   
+ We created the YAML file:
+    `root@cbe12e5ae6b6e:/etc/ansible# nano install-ansible-playbooks.yml`
+    
+    ![docker ansible container](./Linux/install-ansible-playbooks.PNG)
 
 
 The username can be any name, but it must be something the students will not forget. The SSH public key must be copied from the machine.
