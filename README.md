@@ -155,7 +155,7 @@ It is crucial to make sure both of these VM's are in the same availability Set.
   The Ansible container has full access to our VNet and can make a connection with our new VM.
   Each time we start our Virtual machines, we usually ran some few linux commands to start the ansible container and attach it, this below script was written to enhance performance.
   
-  
+  ![docker ansible container](./Linux/docker_container_ansible.PNG)
 
 
 
