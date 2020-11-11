@@ -316,6 +316,9 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
      
    * We created the elk yaml playbook
    
+    `root@cbe12e5ae6b6e:/etc/ansible# nano install-elk.ymk`
+   
+   ![elk playbook](./Ansible/install-elk.yml.PNG)
    
      
      
