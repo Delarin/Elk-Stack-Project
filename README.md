@@ -170,6 +170,10 @@ It is crucial to make sure both of these VM's are in the same availability Set.
     `root@cbe12e5ae6b6e:/etc/ansible# nano pentest.yml`
     
    ![DVWA container](./Ansible/pentest.yml.PNG)
+   
+We edited the ansible.cfg, and hosts files as thus:
+
+  
 
 
 The username can be any name, but it must be something the students will not forget. The SSH public key must be copied from the machine.
