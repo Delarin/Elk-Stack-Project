@@ -312,14 +312,14 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
    #### Downloading and Configuring the ELK Container
    
    * From your Ansible container, we added the new VM to Ansible's hosts file.
-   
-     `root@cbe12e5ae6b6e:/etc/ansible# nano hosts`
+  
+  `root@cbe12e5ae6b6e:/etc/ansible# nano hosts`
     
      ![Hosts file](./Ansible/hosts.PNG)
      
    * We created the elk yaml playbook
    
-    `root@cbe12e5ae6b6e:/etc/ansible# nano install-elk.ymk`
+   `root@cbe12e5ae6b6e:/etc/ansible# nano install-elk.ymk`
    
    ![elk playbook](./Ansible/install-elk.yml.PNG)
    
@@ -347,7 +347,7 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
    ##### 2. Creating the Filebeat Configuration File
       * From the /etc/ansible working directory, we ran this command to download the filebeat-config.yml file and edit the configuration settings to work with our ELK server.
       
-      `curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-config.yml`
+ `curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-config.yml`
       
       * After we downloaded the file into the Ansible container, we edited the file as such:
        * we changed the 'username', the 'password', the 'hosts' IP address and ports number.
