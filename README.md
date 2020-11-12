@@ -338,14 +338,14 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
    
    #### Filebeat Installation on the DVWA Containers
    
-   1. While the ELK server container is up and running, we clicked 'Explore on my Own', and performed the following tasks:
+   ##### 1. While the ELK server container is up and running, we clicked 'Explore on my Own', and performed the following tasks:
    
      * We clicked 'Add Log Data'
      * We then chose 'System Logs'
      * We clicked on the 'DEB' tab under 'Getting Started'.
        * We derived the filebeat installation instructions from this site, and if the installation is successful, the site will be updated.
        
-   2. Creating the Filebeat Configuration File
+   ##### 2. Creating the Filebeat Configuration File
       * From the /etc/ansible working directory, we ran this command to download the filebeat-config.yml file and edit the configuration settings to work with our ELK server.
       
       `curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-config.yml`
@@ -356,7 +356,13 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
        ![filebeat config file](./Ansible/filebeat-config.PNG)
        
        ![filebeat config 2 file](./Ansible/filebeat-config-2.PNG)
-       
+      
+  ##### 3. Creating the FileBeat Installation Play
+  
+      * We created the filebeat-playbook.yml that we will use to installs the Filebeat and then copies the Filebeat configuration file to the correct location, as shown below:
+        * We name the playbook as 'filebeat-playbook.yml'
+      
+  ![filebeat playbook](./Ansible/filebeat-playbook.yml.PNG)
    
    
      
