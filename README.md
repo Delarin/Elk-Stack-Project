@@ -353,9 +353,9 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
       * After we downloaded the file into the Ansible container, we edited the file as such:
        * we changed the 'username', the 'password', the 'hosts' IP address and ports number.
        
-       ![filebeat config file](./Ansible/filebeat-config.PNG)
+   ![filebeat config file](./Ansible/filebeat-config.PNG)
        
-       ![filebeat config 2 file](./Ansible/filebeat-config-2.PNG)
+   ![filebeat config 2 file](./Ansible/filebeat-config-2.PNG)
       
   ##### 3. Creating the FileBeat Installation Play
   
@@ -389,6 +389,17 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
       * We clicked 'Add Metric Data"
       * Next, we clicked 'Docker Metrics"
       * Next, we clicked'DEB' tab under 'Getting Started' for the correct Linux instructions.
+      
+    * We updated the metricbeat-config.yml file as shown below:
+    
+   ![metricbeat config file](./Ansible/metricbeat-config.PNG)
+   
+   ![metricbeat config 2 file](./Ansible/metricbeat-config-2.PNG)
+   
+   
+   * We created our metricbeat playbook as shown below:
+   
+   ![metricbeat playbook](./Ansible/metricbeat-playbook.yml.PNG)
       
   
     
