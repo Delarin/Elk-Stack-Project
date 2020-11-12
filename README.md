@@ -326,15 +326,34 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
    
    * We then ran the paybook with this code:
    
-    `root@cbe12e5ae6b6e:/etc/ansible#ansible-playbook install-elk.yml`
+   `root@cbe12e5ae6b6e:/etc/ansible#ansible-playbook install-elk.yml`
     
    * We accessed our ELK server by navigating to "http://[your.ELK-VM.External.IP]:5601/app/kibana" ie. http://104.209.238.34:5601/app/kibana
    
    ![kibana app](./Diagrams/images/image10.png)
    
-   * We selected Explore
+   * We selected 'Explore on my own'
    
    ![kibana app 2](./Diagrams/images/image2.png)
+   
+   #### Filebeat Installation on the DVWA Containers
+   
+   1. While the ELK server container is up and running, we clicked 'Explore on my Own', and performed the following tasks:
+   
+     * We clicked 'Add Log Data'
+     * We then chose 'System Logs'
+     * We clicked on the 'DEB' tab under 'Getting Started'.
+       * We derived the filebeat installation instructions from this site, and if the installation is successful, the site will be updated.
+       
+   2. Creating the Filebeat Configuration File
+      * From the /etc/ansible working directory, we ran this command to download the filebeat-config.yml file and edit the configuration settings to work with our ELK server.
+      
+      `curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-config.yml`
+      
+      * After we downloaded the file into the Ansible container, we edited the file as such:
+       * we changed the 'username', the 'password', the 'hosts' IP address and ports number.
+       
+       
    
    
      
