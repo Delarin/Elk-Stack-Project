@@ -379,6 +379,19 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
      
     This gave us these as prove of installation success:
     
+  ![filebeat success](./Diagrams/images/image3.png)
+  
+  
+  #### Creating a Play to Install Metrcbeat
+  
+  To do this, we followed the same procedures we used for installing filebeat.
+    * We navigated to the ELK server's IP
+      * We clicked 'Add Metric Data"
+      * Next, we clicked 'Docker Metrics"
+      * Next, we clicked'DEB' tab under 'Getting Started' for the correct Linux instructions.
+      
+  
+    
     
      
      
