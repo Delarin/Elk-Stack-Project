@@ -366,7 +366,7 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
    
       * We saved the file in roles directory, and ran the filebeat-playbook.yml to install Filebeat on the DVWA machines:
       
-      `root@cbe12e5ae6b6e:/etc/ansible/roles#ansible-playbook filebeat-playbook.yml`
+   `root@cbe12e5ae6b6e:/etc/ansible/roles#ansible-playbook filebeat-playbook.yml`
    
    ##### 4. Verifying filebeat Installation and Playbook
    
@@ -406,7 +406,7 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
    
     * We ran the metricbeat-playbook.yml file with the command: 
     
-    `root@cbe12e5ae6b6e:/etc/ansible/roles#ansible-playbook metricbeat-playbook.yml`
+   `root@cbe12e5ae6b6e:/etc/ansible/roles#ansible-playbook metricbeat-playbook.yml`
     
     * After the process completed, on the ELK server GUI, at 'Step 5: Module Status' we clicked 'Check Data'
     
