@@ -369,7 +369,7 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
       
       `root@cbe12e5ae6b6e:/etc/ansible/roles#ansible-playbook filebeat-playbook.yml`
    
-   ##### 4. Verifying Installation and Playbook
+   ##### 4. Verifying filebeat Installation and Playbook
    
    After the playbook completed its installations, we performed thr following test to verify that its works:
    
@@ -399,7 +399,16 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
    
    * We created our metricbeat playbook as shown below:
    
-   ![metricbeat playbook](./Ansible/metricbeat-playbook.yml.PNG)
+   ![metricbeat playbook](./Ansible/metricbeat-playbook.PNG)
+   
+   ##### Verifying Metricbeat Installation and Playbook
+   
+    * We ran the metricbeat-playbook.yml file with the command:  `root@cbe12e5ae6b6e:/etc/ansible/roles#ansible-playbook metricbeat-playbook.yml`
+    
+    * After the process completed, on the ELK server GUI, at 'Step 5: Module Status' we clicked 'Check Data''
+    
+    
+    
       
   
     
