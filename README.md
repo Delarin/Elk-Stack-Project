@@ -353,6 +353,9 @@ We created a new Ubuntu VM in your virtual network using the same procedure ment
       * After we downloaded the file into the Ansible container, we edited the file as such:
        * we changed the 'username', the 'password', the 'hosts' IP address and ports number.
        
+       ![filebeat config file](./Ansible/filebeat-config.PNG)
+       
+       ![filebeat config 2 file](./Ansible/filebeat-config-2.PNG)
        
    
    
